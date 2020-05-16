@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da velha</title>
+</head>
+<body>
+    <nav id='score'>
+        <div id='player-x-name'> Jogador X: <div id='score-x'>0</div></div>
+        <div id='player-o-name'> Jogador O: <div id='score-o'>0</div></div>
+    </nav>
+       
+
+    <nav id='game-area'>
+        
+        <nav id='container'  draggable="false">
+            <div id='row-1' class='row'>
+                <div id='a1' class='square'></div>
+                <div id='b1' class='square'></div>
+                <div id='c1' class='square'></div>
+            </div>
+            <div id='row-2' class='row'>
+                <div id='a2' class='square'></div>
+                <div id='b2' class='square'></div>
+                <div id='c2' class='square'></div>
+            </div>
+            <div id='row-3' class='row'>
+                <div id='a3' class='square'></div>
+                <div id='b3' class='square'></div>
+                <div id='c3' class='square'></div>
+            </div>
+        </nav>
+        <nav id='piece-box'>
+            <div id='piece-x' draggable="true">X</div>
+            <div id='piece-o' draggable="true">O</div>
+        </nav>
+    </nav>
+    
+        <script src="scripts.js"></script>
+
+</body>
+</html>

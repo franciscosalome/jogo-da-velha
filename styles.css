@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+nav#score{
+    font-size: 40px;
+    display: flex;
+}
+
+body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    justify-content: center;
+}
+nav#score{
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+}
+nav#score > div{
+    margin:10px;
+    width: 100%;
+    border: medium solid black;
+    display: flex;
+    margin: 0 10vh 10px;
+    justify-content: center;
+}
+nav#game-area{
+    border: thin solid rgba(50, 50, 50, 0.4);
+    border-radius: 10px;
+    padding: 10px 10px;
+    width: 80vh;
+    margin: 10vh 10vh;
+    display: flex;
+    
+}
+nav#container{
+    width: 300px;
+    padding-right: 30px;
+    border-right: black thin double;
+    cursor: not-allowed;
+}
+nav#piece-box{
+    height: 100px;
+    padding: 10px;
+    display: flex;
+}
+nav#piece-box > div{
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    
+    font-size: 80px;
+    font-family: Pangolin;
+    /*para impedir a seleção do texto*/
+    -webkit-touch-callout: none;
+   -webkit-user-select: none;
+   -khtml-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+}
+nav#piece-box > div:hover{
+    /*border:thin solid green;*/
+    font-size: 85px;
+    cursor: grab;
+}
+nav#container > div{
+    display: flex;
+    flex-direction: row;
+    background-color: antiquewhite;
+    width: 300px;
+}
+
+.square{
+    height: 100px;
+    width: 100px;
+    line-height: 100px;
+    text-align: center;
+    font-size: 80px;
+    font-family: Pangolin;
+    transition: 0.2s ease-in-out;
+}
+div#a1, div#b1{
+    border-bottom: grey medium solid;
+    border-right: grey medium solid;
+}
+div#c1, div#c2{
+    border-bottom: grey medium solid;
+}
+div#a2, div#b2{
+    border-right: grey medium solid;
+    border-bottom: grey medium solid;
+}
+div#a3, div#b3{
+    border-right: grey medium solid;
+}
