@@ -69,13 +69,20 @@ function verifyIndividually(player){
         }else if(player=='O'){
             score.playerO ++
             document.getElementById('score-o').innerHTML = score.playerO
-        }
-        
+        }        
         setTimeout(() => {
             for(var i = 0; i<sq.length;i++){
                 sq[i].innerHTML = ''
             }
         }, 1000);
+    }
+    else if(!!sq[0].innerHTML&&!!sq[1].innerHTML&&!!sq[2].innerHTML&&!!sq[3].innerHTML&&!!sq[4].innerHTML&&!!sq[5].innerHTML&&!!sq[6].innerHTML&&!!sq[7].innerHTML&&!!sq[8].innerHTML){
+      alert('Empate!!')
+      setTimeout(() => {
+        for(var i = 0; i<sq.length;i++){
+            sq[i].innerHTML = ''
+        }
+    }, 1000);
     }
 }
 
