@@ -7,9 +7,19 @@
     <title>Jogo da velha</title>
 </head>
 <body>
+    <nav id='configs'>
+        <div id='preferences'>Preferências ⍟</div>
+        <div id='divform'>
+            <form id='form'>
+                <input type="text" id='nameX' placeholder="Nome do jogador X" required/>
+                <input type="text" id='nameO' placeholder="Nome do jogador O" required/>
+                <button type="submit">Confirmar</button>
+            </form>
+        </div>
+    </nav>
     <nav id='score'>
-        <div id='player-x-name'> Jogador X: <div id='score-x'>0</div></div>
-        <div id='player-o-name'> Jogador O: <div id='score-o'>0</div></div>
+        <div> <div id='player-x-name'>Jogador X: </div><div id='score-x'>0</div></div>
+        <div> <div id='player-o-name'>Jogador X: </div><div id='score-o'>0</div></div>
     </nav>
        
 
@@ -39,6 +49,7 @@
     </nav>
     
         <script src="scripts.js"></script>
+        <script src="configs.js"></script>
 
 </body>
 </html>

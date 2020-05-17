@@ -1,7 +1,13 @@
 var lastmove = ''
 var moving = ''
 var actualSquareId = ''
-var score = {playerX:0, playerO:0}
+const maxPoints = 5
+
+var playersInfo = {
+  playerX:{name:localStorage.getItem('playerXname'),score:0},
+  playerO:{name:localStorage.getItem('playerOname'),score:0}
+}
+
 //Definição dos movimentos:
   var cols = document.querySelectorAll('#piece-box #piece-x, #piece-o');
   [].forEach.call(cols, function(col) {
@@ -30,6 +36,7 @@ var score = {playerX:0, playerO:0}
   function handleDragLeave(e){
       this.style.backgroundColor  = 'antiquewhite'
       this.style.cursor = 'grabbing'
+      
   }
   function handleDragEnter(e){
       actualSquareId = this.id
@@ -50,6 +57,8 @@ var score = {playerX:0, playerO:0}
 //Definição do vencedor:
 
 function verifyIndividually(player){
+    playersInfo.playerX.name = localStorage.getItem('playerXname')
+    playersInfo.playerO.name = localStorage.getItem('playerOname')
     var sq = document.getElementsByClassName('square')
     
     var try1 = (sq[0].innerHTML==sq[1].innerHTML&&sq[1].innerHTML==sq[2].innerHTML)&&(!!sq[0].innerHTML && !!sq[1].innerHTML&&!!sq[2].innerHTML)
@@ -61,14 +70,18 @@ function verifyIndividually(player){
     var try7 = (sq[0].innerHTML==sq[4].innerHTML&&sq[4].innerHTML==sq[8].innerHTML)&&(!!sq[0].innerHTML && !!sq[4].innerHTML&&!!sq[8].innerHTML)
     var try8 = (sq[2].innerHTML==sq[4].innerHTML&&sq[4].innerHTML==sq[6].innerHTML)&&(!!sq[2].innerHTML && !!sq[4].innerHTML&&!!sq[6].innerHTML)
     if(try1 || try2 || try3 || try4 || try5 || try6 || try7 || try8){
-        alert(`${player} venceu esta rodada!!`)
+       
         if(player=='X'){
-            score.playerX ++
-            document.getElementById('score-x').innerHTML = score.playerX
+          alert(`${playersInfo.playerX.name} venceu esta rodada!!`)
+          playersInfo.playerX.score ++
+            //score.playerX ++
+            document.getElementById('score-x').innerHTML = playersInfo.playerX.score
             
         }else if(player=='O'){
-            score.playerO ++
-            document.getElementById('score-o').innerHTML = score.playerO
+          alert(`${playersInfo.playerO.name} venceu esta rodada!!`)
+          playersInfo.playerO.score ++
+            //score.playerO ++
+            document.getElementById('score-o').innerHTML = playersInfo.playerX.score
         }        
         setTimeout(() => {
             for(var i = 0; i<sq.length;i++){
@@ -84,6 +97,15 @@ function verifyIndividually(player){
         }
     }, 1000);
     }
+    if(playersInfo.playerX.score>=maxPoints || playersInfo.playerO.score >=maxPoints){
+      if(playersInfo.playerX.score>playersInfo.playerO.score){
+        document.getElementById('game-area').innerHTML = `<h1>${playersInfo.playerX.name} venceu o jogo!!!! Parabéns!!</h1>`
+      }else{
+        document.getElementById('game-area').innerHTML = `<h1>${playersInfo.playerO.name} venceu o jogo!!!! Parabéns!!</h1>`
+      }
+    }
 }
+
+
 
 

@@ -10,24 +10,46 @@ body{
     flex-direction: column;
     overflow: hidden;
     justify-content: center;
+    align-items: center;
+}
+nav#configs{
+    
+    cursor: pointer;
+    font-size: x-large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+nav#configs>div{
+    margin-bottom: 10px;
+}
+input, button{
+    height: 30px;
+    box-shadow: lawngreen;
+}
+div#divform{
+    margin-bottom: 10px;
+    display: none;
 }
 nav#score{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     max-width: 300px;
 }
 nav#score > div{
     margin:10px;
-    width: 100%;
-    border: medium solid black;
+    width: auto;
+    border-bottom: medium solid black;
     display: flex;
-    margin: 0 10vh 10px;
+    
     justify-content: center;
 }
+#player-x-name, #player-o-name{
+    white-space: nowrap;
+}
+
 nav#game-area{
     border: thin solid rgba(50, 50, 50, 0.4);
     border-radius: 10px;
-    padding: 10px 10px;
+    padding: 5px 5px;
     width: 80vh;
     margin: 10vh 10vh;
     display: flex;
