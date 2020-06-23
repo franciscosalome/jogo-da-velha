@@ -9,6 +9,9 @@ var pieceSize = '80px'
 if(!!localStorage.getItem('playerXname')){
     document.getElementById('player-x-name').innerHTML = localStorage.getItem('playerXname')  + ':'
     document.getElementById('player-o-name').innerHTML = localStorage.getItem('playerOname') + ':'
+}else{
+    localStorage.setItem('playerXname','Jogador X')
+    localStorage.setItem('playerOname','Jogador O')
 }
 var form = document.getElementById('form')
 var config = document.getElementById('configs')
